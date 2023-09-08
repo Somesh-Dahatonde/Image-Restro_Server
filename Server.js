@@ -15,11 +15,10 @@ app.use(express.json());
 
 app.post("/restore-image", async (req, res) => {
   const { imageUrl, model, ScaleValue } = req.body;
-  // const { imageUrl } = req.body;
-  console.log(imageUrl);
-  // console.log(ImageValue);
-  console.log(model);
-  console.log(ScaleValue);
+  //use this for debugging
+  // console.log(imageUrl);
+  // console.log(model);
+  // console.log(ScaleValue);
 
   try {
     const output = await replicate.run(
