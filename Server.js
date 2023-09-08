@@ -5,12 +5,16 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 const port = process.env.PORT || 5000;
-console.log("Token:", process.env.REPLICATE_API_TOKEN);
+// console.log("Token:", process.env.REPLICATE_API_TOKEN);
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN,
 });
 app.use(cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 app.use(express.json());
 
 app.post("/restore-image", async (req, res) => {
