@@ -6,6 +6,6 @@
     "replicate": "^0.16.1"
   },
   "scripts": {
-    "serve": "node Server.js"
+    "serve": "node Server.mjs"
   }
 }
