@@ -11,10 +11,10 @@ const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN,
 });
 app.use(cors());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
 app.use(express.json());
 
 app.post("/restore-image", async (req, res) => {
